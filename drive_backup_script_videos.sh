@@ -11,7 +11,7 @@ current_wifi_ssid=$(iwgetid -r)
 if [ "$current_wifi_ssid" == "$desired_wifi_ssid" ]; then
 
     # Running the sync
-    rclone bisync ~/Videos/Drive 'gdrive:[4] Videos' --remove-empty-dirs --resync --drive-export-formats link.html  --check-access  >> $log_file 2>&1
+    rclone bisync ~/Videos/Drive 'gdrive:[4] Videos' --remove-empty-dirs --drive-export-formats link.html  --check-access  >> $log_file 2>&1
     result=$?    
 
     # If there was an error, send me a notification
